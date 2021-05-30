@@ -2,7 +2,7 @@
   "name": "eslint-plugin-lookbehind-assertions",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist"
@@ -11,6 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@typescript-eslint/experimental-utils": "^4.25.0",
+    "prettier": "^2.3.0",
     "rimraf": "^3.0.2"
   }
 }
