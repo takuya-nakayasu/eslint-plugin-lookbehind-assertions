@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "clean": "rimraf dist/*"
+    "clean": "rimraf dist"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@typescript-eslint/experimental-utils": "^4.25.0",
     "rimraf": "^3.0.2"
   }
 }
