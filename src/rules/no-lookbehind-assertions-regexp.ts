@@ -20,7 +20,7 @@ export const lookbehindAssertions: TSESLint.RuleModule<
   },
   create: (context) => {
     return {
-      JSXElement(node) {
+      Identifier(node) {
         console.dir(node);
       },
     };
