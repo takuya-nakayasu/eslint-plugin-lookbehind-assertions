@@ -8,7 +8,8 @@ export const noLookbehindAssertionsRegexp: TSESLint.RuleModule<
     type: 'problem',
     docs: {
       category: 'Possible Errors',
-      description: 'Check',
+      description:
+        'disallow the use of regexp lookbehind assertions((?<= ) and (?<! ))',
       recommended: 'error',
       url: '',
     },
