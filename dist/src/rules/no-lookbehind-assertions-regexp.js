@@ -15,17 +15,23 @@ function getRegexpPattern(node) {
     }
     return undefined;
 }
+function isLookbehindAssertions(pattern) {
+    var positiveLookbehindAssertions = new RegExp('\\(\\?<=.+');
+    var negativeLookbehindAssertions = new RegExp('\\(\\?<!.+');
+    return (positiveLookbehindAssertions.test(pattern) ||
+        negativeLookbehindAssertions.test(pattern));
+}
 exports.noLookbehindAssertionsRegexp = {
     meta: {
         type: 'problem',
         docs: {
             category: 'Possible Errors',
-            description: 'disallow the use of regexp lookbehind assertions((?<= ) and (?<! ))',
+            description: 'disallow the use of lookbehind assertions((?<= ) and (?<! )) in regular expressions',
             recommended: 'error',
             url: '',
         },
         messages: {
-            noLookbehindAssertionsRegexp: 'Remove',
+            noLookbehindAssertionsRegexp: 'Unexpected lookbehind assertions((?<= ) and (?<! )) in regular expression: {{pattern}}.',
         },
         schema: [],
         fixable: 'code',
@@ -35,7 +41,15 @@ exports.noLookbehindAssertionsRegexp = {
             Literal: function (node) {
                 var pattern = getRegexpPattern(node);
                 if (pattern) {
-                    console.dir(node);
+                    if (isLookbehindAssertions(pattern)) {
+                        context.report({
+                            node: node,
+                            messageId: 'noLookbehindAssertionsRegexp',
+                            data: {
+                                pattern: pattern,
+                            },
+                        });
+                    }
                 }
             },
         };

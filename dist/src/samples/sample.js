@@ -5,3 +5,7 @@ console.log(ripe_oranges);
 var re = new RegExp('(?<=ripe )orange');
 ripe_oranges = oranges.filter(function (fruit) { return fruit.match(re); });
 console.log(ripe_oranges);
+var str = '(?<=ripe )orange';
+var re2 = new RegExp(str);
+ripe_oranges = oranges.filter(function (fruit) { return fruit.match(re2); });
+console.log(ripe_oranges);
