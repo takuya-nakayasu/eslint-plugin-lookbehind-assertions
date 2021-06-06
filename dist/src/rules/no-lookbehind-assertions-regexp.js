@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.noLookbehindAssertionsRegexp = void 0;
-function getRegexpPattern(node) {
+function getStringValue(node) {
     if (node.regex) {
         return node.regex.pattern;
     }
@@ -26,7 +26,7 @@ exports.noLookbehindAssertionsRegexp = {
             url: '',
         },
         messages: {
-            noLookbehindAssertionsRegexp: 'Unexpected lookbehind assertions((?<= ) and (?<! )) in regular expression: {{pattern}}.',
+            noLookbehindAssertionsRegexp: 'Unexpected lookbehind assertions((?<= ) and (?<! )) in regular expression: {{stringValue}}.',
         },
         schema: [],
         fixable: 'code',
@@ -34,14 +34,14 @@ exports.noLookbehindAssertionsRegexp = {
     create: function (context) {
         return {
             Literal: function (node) {
-                var pattern = getRegexpPattern(node);
-                if (pattern) {
-                    if (isLookbehindAssertions(pattern)) {
+                var stringValue = getStringValue(node);
+                if (stringValue) {
+                    if (isLookbehindAssertions(stringValue)) {
                         context.report({
                             node: node,
                             messageId: 'noLookbehindAssertionsRegexp',
                             data: {
-                                pattern: pattern,
+                                stringValue: stringValue,
                             },
                         });
                     }

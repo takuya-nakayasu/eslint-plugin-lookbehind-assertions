@@ -1,6 +1,6 @@
 import { TSESLint } from '@typescript-eslint/experimental-utils';
 
-function getRegexpPattern(node: any): string | undefined {
+function getStringValue(node: any): string | undefined {
   if (node.regex) {
     return node.regex.pattern;
   }
@@ -34,7 +34,7 @@ export const noLookbehindAssertionsRegexp: TSESLint.RuleModule<
     },
     messages: {
       noLookbehindAssertionsRegexp:
-        'Unexpected lookbehind assertions((?<= ) and (?<! )) in regular expression: {{pattern}}.',
+        'Unexpected lookbehind assertions((?<= ) and (?<! )) in regular expression: {{stringValue}}.',
     },
     schema: [],
     fixable: 'code',
@@ -42,14 +42,14 @@ export const noLookbehindAssertionsRegexp: TSESLint.RuleModule<
   create: (context) => {
     return {
       Literal(node) {
-        const pattern = getRegexpPattern(node);
-        if (pattern) {
-          if (isLookbehindAssertions(pattern)) {
+        const stringValue = getStringValue(node);
+        if (stringValue) {
+          if (isLookbehindAssertions(stringValue)) {
             context.report({
               node,
               messageId: 'noLookbehindAssertionsRegexp',
               data: {
-                pattern,
+                stringValue,
               },
             });
           }

@@ -12,5 +12,17 @@ tester.run('noLookbehindAssertionsRegexp', noLookbehindAssertionsRegexp, {
       code: 'const RE_DOLLAR_PREFIX = /(?<=$)foo/g',
       errors: [{ messageId: 'noLookbehindAssertionsRegexp' }],
     },
+    {
+      code: `const re = new RegExp('(?<=ripe )orange')`,
+      errors: [{ messageId: 'noLookbehindAssertionsRegexp' }],
+    },
+    {
+      code: `const str = '(?<!ripe )orange'`,
+      errors: [{ messageId: 'noLookbehindAssertionsRegexp' }],
+    },
+    {
+      code: 'const RE_DOLLAR_PREFIX = /(?<!$)foo/g',
+      errors: [{ messageId: 'noLookbehindAssertionsRegexp' }],
+    },
   ],
 });
