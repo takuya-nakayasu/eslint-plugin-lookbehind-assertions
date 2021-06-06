@@ -1,5 +1,5 @@
 import { TSESLint } from '@typescript-eslint/experimental-utils';
-import { noLookbehindAssertionsRegexp } from '../../src/rules/no-lookbehind-assertions-regexp';
+import noLookbehindAssertionsRegexp from '../../src/rules/no-lookbehind-assertions-regexp';
 
 const tester = new TSESLint.RuleTester({
   parser: require.resolve('@typescript-eslint/parser'),

@@ -5,12 +5,7 @@ function getRegexpPattern(node) {
     if (node.regex) {
         return node.regex.pattern;
     }
-    if (typeof node.value === 'string' &&
-        (node.parent.type === 'NewExpression' ||
-            node.parent.type === 'CallExpression') &&
-        node.parent.callee.type === 'Identifier' &&
-        node.parent.callee.name === 'RegExp' &&
-        node.parent.arguments[0] === node) {
+    if (typeof node.value === 'string') {
         return node.value;
     }
     return undefined;
@@ -56,3 +51,4 @@ exports.noLookbehindAssertionsRegexp = {
     },
 };
 module.exports = exports.noLookbehindAssertionsRegexp;
+exports.default = exports.noLookbehindAssertionsRegexp;
