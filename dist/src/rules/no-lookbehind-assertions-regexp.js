@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.lookbehindAssertions = void 0;
-exports.lookbehindAssertions = {
+exports.noLookbehindAssertionsRegexp = void 0;
+exports.noLookbehindAssertionsRegexp = {
     meta: {
         type: 'problem',
         docs: {
@@ -11,16 +11,17 @@ exports.lookbehindAssertions = {
             url: '',
         },
         messages: {
-            lookbehindAssertions: 'Remove',
+            noLookbehindAssertionsRegexp: 'Remove',
         },
         schema: [],
         fixable: 'code',
     },
     create: function (context) {
         return {
-            Identifier: function (node) {
+            Literal: function (node) {
                 console.dir(node);
             },
         };
     },
 };
+module.exports = exports.noLookbehindAssertionsRegexp;

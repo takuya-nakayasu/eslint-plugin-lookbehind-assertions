@@ -1,7 +1,7 @@
 import { TSESLint } from '@typescript-eslint/experimental-utils';
 
-export const lookbehindAssertions: TSESLint.RuleModule<
-  'lookbehindAssertions',
+export const noLookbehindAssertionsRegexp: TSESLint.RuleModule<
+  'noLookbehindAssertionsRegexp',
   []
 > = {
   meta: {
@@ -13,7 +13,7 @@ export const lookbehindAssertions: TSESLint.RuleModule<
       url: '',
     },
     messages: {
-      lookbehindAssertions: 'Remove',
+      noLookbehindAssertionsRegexp: 'Remove',
     },
     schema: [],
     fixable: 'code',
@@ -26,3 +26,5 @@ export const lookbehindAssertions: TSESLint.RuleModule<
     };
   },
 };
+
+module.exports = noLookbehindAssertionsRegexp;
