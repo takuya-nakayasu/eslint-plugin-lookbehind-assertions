@@ -1,4 +1,21 @@
-import { TSESLint } from '@typescript-eslint/experimental-utils';
+import { TSESLint, TSESTree } from '@typescript-eslint/experimental-utils';
+
+function getRegexpPattern(node: any): string | undefined {
+  if (node.regex) {
+    return node.regex.pattern;
+  }
+  if (
+    typeof node.value === 'string' &&
+    (node.parent.type === 'NewExpression' ||
+      node.parent.type === 'CallExpression') &&
+    node.parent.callee.type === 'Identifier' &&
+    node.parent.callee.name === 'RegExp' &&
+    node.parent.arguments[0] === node
+  ) {
+    return node.value;
+  }
+  return undefined;
+}
 
 export const noLookbehindAssertionsRegexp: TSESLint.RuleModule<
   'noLookbehindAssertionsRegexp',
@@ -22,7 +39,10 @@ export const noLookbehindAssertionsRegexp: TSESLint.RuleModule<
   create: (context) => {
     return {
       Literal(node) {
-        console.dir(node);
+        const pattern = getRegexpPattern(node);
+        if (pattern) {
+          console.dir(node);
+        }
       },
     };
   },
