@@ -37,7 +37,6 @@ export const noLookbehindAssertionsRegexp: TSESLint.RuleModule<
         'Unexpected lookbehind assertions((?<= ) and (?<! )) in regular expression: {{stringValue}}.',
     },
     schema: [],
-    fixable: 'code',
   },
   create: (context) => {
     return {

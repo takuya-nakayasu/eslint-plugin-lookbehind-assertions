@@ -29,7 +29,6 @@ exports.noLookbehindAssertionsRegexp = {
             noLookbehindAssertionsRegexp: 'Unexpected lookbehind assertions((?<= ) and (?<! )) in regular expression: {{stringValue}}.',
         },
         schema: [],
-        fixable: 'code',
     },
     create: function (context) {
         return {
