@@ -7,13 +7,13 @@ export = {
     all: {
       plugins: ['lookbehind-assertions'],
       rules: {
-        'no-lookbehind-assertions-regexp': 'error',
+        'lookbehind-assertions/no-lookbehind-assertions-regexp': 'error',
       },
     },
     recommended: {
       plugins: ['lookbehind-assertions'],
       rules: {
-        'no-lookbehind-assertions-regexp': 'error',
+        'lookbehind-assertions/no-lookbehind-assertions-regexp': 'error',
       },
     },
   },
