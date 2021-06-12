@@ -5,13 +5,13 @@ export = {
   },
   configs: {
     all: {
-      plugins: ['no-lookbehind-assertions-regexp'],
+      plugins: ['lookbehind-assertions'],
       rules: {
         'no-lookbehind-assertions-regexp': 'error',
       },
     },
     recommended: {
-      plugins: ['no-lookbehind-assertions-regexp'],
+      plugins: ['lookbehind-assertions'],
       rules: {
         'no-lookbehind-assertions-regexp': 'error',
       },
