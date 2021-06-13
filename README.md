@@ -37,6 +37,12 @@ module.exports = {
 }
 ```
 
+## Rules
+
+| Rule ID                                                                            | Description                                                   |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [no-lookbehind-assertions-regexp](./docs/rules/no-lookbehind-assertions-regexp.md) | Disallows the use of regular expression lookbehind assertions |
+
 ## Examples
 
 Examples of **incorrect** code:
