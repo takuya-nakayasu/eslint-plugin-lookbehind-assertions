@@ -24,7 +24,8 @@
     "clean": "rimraf dist",
     "lint": "npx eslint . --ext .ts",
     "test": "jest",
-    "test-sample": "eslint src/samples/sample.ts"
+    "test-sample": "eslint src/samples/sample.ts",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "devDependencies": {
     "@types/jest": "26.0.23",
