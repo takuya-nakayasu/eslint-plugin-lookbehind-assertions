@@ -30,7 +30,7 @@ export const noLookbehindAssertionsRegexp: TSESLint.RuleModule<
       description:
         'disallow the use of lookbehind assertions((?<= ) and (?<! )) in regular expressions',
       recommended: 'error',
-      url: 'https://github.com/l08084/eslint-plugin-lookbehind-assertions/blob/main/docs/rules/no-lookbehind-assertions-regexp.md',
+      url: 'https://github.com/takuya-nakayasu/eslint-plugin-lookbehind-assertions/blob/main/docs/rules/no-lookbehind-assertions-regexp.md',
     },
     messages: {
       noLookbehindAssertionsRegexp:

@@ -4,7 +4,7 @@ An ESLint plugin that disallows the use of regular expression lookbehind asserti
 
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-lookbehind-assertions.svg)](https://www.npmjs.com/package/eslint-plugin-lookbehind-assertions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Twitter](https://img.shields.io/twitter/follow/l08084?style=social)](https://twitter.com/l08084)
+[![Twitter](https://img.shields.io/twitter/follow/takuya_nakayasu?style=social)](https://twitter.com/takuya_nakayasu)
 
 ## Installation
 
