@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-lookbehind-assertions",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ESLint plugin for regular expression lookbehind assertions",
   "author": {
     "name": "Takuya Nakayasu",
